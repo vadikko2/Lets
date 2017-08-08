@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:layout_weight="0.06">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Name Party"
+            android:padding="15dp"
+            android:textSize="22sp" />
+
+        <Switch
+            android:id="@+id/switchPrivate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Public/Private" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:layout_weight="0">
+
+        <EditText
+            android:id="@+id/dateStart"
+            android:layout_width="183dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Date Start"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/dateEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Date End"
+            android:padding="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:layout_weight="0">
+
+        <EditText
+            android:id="@+id/timeStart"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Time Start"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/timeEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Time End"
+            android:padding="15dp"
+            android:textSize="20sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:layout_weight="0">
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="145dp"
+        android:layout_height="wrap_content"
+        android:text="Select Place"
+        android:textAlignment="center"
+        android:textSize="22sp" />
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:layout_weight="0.01"
+        android:orientation="horizontal"
+        android:weightSum="0">
+        <fragment
+            android:id="@+id/place_autocomplete_fragment"
+            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="362dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:weightSum="0"
+        android:layout_weight="0">
+
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/mapView"
+            android:layout_width="match_parent"
+            android:layout_height="174dp"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            map:cameraTilt="50"
+            map:uiCompass="false"
+            map:uiZoomGestures="true"
+            map:uiZoomControls="false"
+            map:uiRotateGestures="false"
+            map:uiScrollGestures="true" />
+    </LinearLayout>
+
+
+
+</LinearLayout>
