@@ -13,9 +13,11 @@
     <Button
         android:id="@+id/button_create_party"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
+        android:background="@drawable/orange_gradient"
         android:onClick="openCreateParty"
-        android:text="Create party (Подними, чтобы искать)" />
+        android:text="Create party (Подними, чтобы искать)"
+        android:textColor="@android:color/white" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/activity_main_swipe_refresh_layout"
@@ -25,7 +27,7 @@
         <ListView
             android:id="@+id/activity_main_listview"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="467dp" />
 
     </android.support.v4.widget.SwipeRefreshLayout>
 

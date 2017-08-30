@@ -8,5 +8,7 @@
         tools:context="com.example.root.myapplication.bottomsheetActivity">
 
         <!-- подключение нижнего экрана -->
-        <include layout="@layout/activity_bottom_sheet" />
+        <include layout="@layout/activity_bottom_sheet"
+            android:layout_height="574dp"
+            tools:ignore="IncludeLayoutParam" />
     </android.support.design.widget.CoordinatorLayout>
