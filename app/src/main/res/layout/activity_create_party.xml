@@ -112,23 +112,18 @@
 
     <LinearLayout
         android:layout_width="362dp"
-        android:layout_height="50dp"
+        android:layout_height="290dp"
         android:orientation="horizontal"
         android:weightSum="0"
         android:layout_weight="0">
 
         <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:map="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/mapView"
-            android:layout_width="match_parent"
-            android:layout_height="216dp"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
             android:name="com.google.android.gms.maps.SupportMapFragment"
-            map:cameraTilt="50"
-            map:uiCompass="false"
-            map:uiZoomGestures="true"
-            map:uiZoomControls="false"
-            map:uiRotateGestures="false"
-            map:uiScrollGestures="true" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
     </LinearLayout>
 
 

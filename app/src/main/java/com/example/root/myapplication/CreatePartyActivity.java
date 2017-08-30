@@ -17,12 +17,15 @@ import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
+import com.google.android.gms.location.places.AutocompleteFilter;
 import com.google.android.gms.location.places.Place;
 import com.google.android.gms.location.places.ui.PlaceAutocomplete;
 import com.google.android.gms.location.places.ui.PlaceAutocompleteFragment;
 import com.google.android.gms.location.places.ui.PlaceSelectionListener;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -31,12 +34,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
  * Created by root on 07.08.17.
  */
 
-public class CreatePartyActivity extends AppCompatActivity {
+public class CreatePartyActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     EditText dateStart, dateEnd, timeStart, timeEnd;
     DatePickerDialog datePickerDialog;
     GoogleMap mMap;
-
+    LatLng pointll = null;
+    Integer tmp = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,16 +106,38 @@ public class CreatePartyActivity extends AppCompatActivity {
 
     public void SelectPlace(){
         PlaceAutocompleteFragment places= (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+        AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
+                .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
+                .build();
+        places.setFilter(typeFilter);
+
         places.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
             public void onPlaceSelected(Place place) {
-                Toast.makeText(getApplicationContext(),place.getName(),Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getApplicationContext(),place.getLatLng().toString(),Toast.LENGTH_SHORT).show();
+                pointll = place.getLatLng();
+                SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                        .findFragmentById(R.id.map);
+                mapFragment.getMapAsync(CreatePartyActivity.this);
             }
 
             @Override
             public void onError(Status status) {
                 Toast.makeText(getApplicationContext(),status.toString(),Toast.LENGTH_SHORT).show();
             }
+
         });
+
+    }
+
+
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        mMap = googleMap;
+        mMap.setMinZoomPreference(9.0f);
+        mMap.setMaxZoomPreference(100.0f);
+        mMap.addMarker(new MarkerOptions().position(pointll).title(pointll.toString()));
+        mMap.animateCamera(CameraUpdateFactory.newLatLng(pointll));
     }
 }
