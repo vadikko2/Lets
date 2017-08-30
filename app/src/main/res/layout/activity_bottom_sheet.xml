@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/orange_gradient"
         android:onClick="openCreateParty"
-        android:text="Create party (Подними, чтобы искать)"
+        android:text="Create party (Подними, чтобы узнать на что подписан)"
         android:textColor="@android:color/white" />
 
     <android.support.v4.widget.SwipeRefreshLayout
