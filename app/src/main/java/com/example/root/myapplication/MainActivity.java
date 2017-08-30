@@ -13,19 +13,30 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity implements OnMapReadyCallback {
     ArrayList arrayList = new ArrayList();
     SwipeRefreshLayout mSwipeRefreshLayout;
     ListView listView;
+    private GoogleMap mMap;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
         listView = (ListView)findViewById(R.id.activity_main_listview);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
@@ -95,5 +106,16 @@ public class MainActivity extends AppCompatActivity{
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+        public void onMapReady(GoogleMap googleMap) {
+            mMap = googleMap;
+            mMap.setMinZoomPreference(9.0f);
+            mMap.setMaxZoomPreference(100.0f);
+            // Add a marker in Sydney and move the camera
+            LatLng sydney = new LatLng(59.8796478,29.8620346);
+            mMap.addMarker(new MarkerOptions().position(sydney).title("Старый петергоф станция"));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
+        }
 }
 

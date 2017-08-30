@@ -6,9 +6,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.root.myapplication.bottomsheetActivity">
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/map"
+        tools:context=".MapsActivity"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
 
-        <!-- подключение нижнего экрана -->
-        <include layout="@layout/activity_bottom_sheet"
-            android:layout_height="574dp"
-            tools:ignore="IncludeLayoutParam" />
+    <!-- подключение нижнего экрана -->
+    <include
+        layout="@layout/activity_bottom_sheet"
+        android:layout_height="460dp" />
     </android.support.design.widget.CoordinatorLayout>

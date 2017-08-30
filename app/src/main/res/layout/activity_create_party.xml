@@ -121,7 +121,7 @@
             xmlns:map="http://schemas.android.com/apk/res-auto"
             android:id="@+id/mapView"
             android:layout_width="match_parent"
-            android:layout_height="174dp"
+            android:layout_height="216dp"
             android:name="com.google.android.gms.maps.SupportMapFragment"
             map:cameraTilt="50"
             map:uiCompass="false"
