@@ -43,11 +43,6 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".bottomsheetActivity" />
-        <activity
-            android:name=".LoadActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:label="@string/title_activity_load"
-            android:theme="@style/FullscreenTheme"></activity>
     </application>
 
 </manifest>

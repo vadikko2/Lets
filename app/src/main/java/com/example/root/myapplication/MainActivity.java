@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity{
     }
 
     public void openCreateParty(View view){
-        Intent intent = new Intent(this, LoadActivity.class);
+        Intent intent = new Intent(this, CreatePartyActivity.class);
         startActivity(intent);
     }
 
