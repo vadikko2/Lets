@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity{
         mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.activity_main_swipe_refresh_layout);
         listView = (ListView)findViewById(R.id.activity_main_listview);
         mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
-// определяем массив типа String
         Random r = new Random();
         for(int i = 0;i < 50; i++){
             arrayList.add( String.valueOf(r.nextInt()));
@@ -55,9 +54,14 @@ public class MainActivity extends AppCompatActivity{
             }
         });
     }
-
+    //для кнопки с картой, пока чо не надо
     public void sendMap(View view){
         Intent intent = new Intent(this, MapsActivity.class);
+        startActivity(intent);
+    }
+
+    public void openCreateParty(View view){
+        Intent intent = new Intent(this, LoadActivity.class);
         startActivity(intent);
     }
 

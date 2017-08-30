@@ -13,4 +13,9 @@
     <string name="map_api_key">AIzaSyCTExmOmznrSFzvjM0CWdGyE3FooXKtM5I</string>
     <string name="action_private_places" />
     <string name="action_settings" />
+    <string name="title_activity_test_bottom_sheet">TestBottomSheet</string>
+
+    <string name="title_activity_load">LoadActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
