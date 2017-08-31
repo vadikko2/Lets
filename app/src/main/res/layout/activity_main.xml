@@ -16,6 +16,5 @@
 
     <!-- подключение нижнего экрана -->
     <include
-        layout="@layout/activity_bottom_sheet"
-        android:layout_height="460dp" />
+        layout="@layout/activity_bottom_sheet" />
     </android.support.design.widget.CoordinatorLayout>

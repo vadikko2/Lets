@@ -140,4 +140,11 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         mMap.addMarker(new MarkerOptions().position(pointll).title(pointll.toString()));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(pointll));
     }
+
+    public void saveParty(View view){
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        Toast.makeText(getApplicationContext(),"Party is Saved",Toast.LENGTH_SHORT).show();
+
+    }
 }

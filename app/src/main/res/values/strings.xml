@@ -15,4 +15,7 @@
     <string name="action_settings" />
     <string name="title_activity_test_bottom_sheet">TestBottomSheet</string>
     <string name="str_atv_places">Enter Place Here</string>
+    <string name="str_select_place">Select Place</string>>
+    <string name="str_set_information">Set Information</string>
+    <string name="str_save_party">Save</string>
 </resources>
