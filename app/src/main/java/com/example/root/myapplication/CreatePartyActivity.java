@@ -11,8 +11,11 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -38,9 +41,11 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
 
     EditText dateStart, dateEnd, timeStart, timeEnd;
     DatePickerDialog datePickerDialog;
+    Spinner spinner;
+    ArrayAdapter<String> adapter;
     GoogleMap mMap;
     LatLng pointll = null;
-    Integer tmp = 0;
+    String[] categorys = {"--", "Спорт", "Развлечения", "Питие", "Культура", "Игры"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,13 +55,32 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         dateEnd = (EditText) findViewById(R.id.dateEnd);
         timeStart = (EditText) findViewById(R.id.timeStart);
         timeEnd = (EditText) findViewById(R.id.timeEnd);
+        //адаптер для спинера
+        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, categorys);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner = (Spinner) findViewById(R.id.spiner_create);
+
         SelectDate(dateStart);
         SelectDate(dateEnd);
         SelectTime(timeStart);
         SelectTime(timeEnd);
         SelectPlace();
+        SelectСategory();
     }
-
+    public void SelectСategory(){
+        spinner.setAdapter(adapter);
+        spinner.setPrompt("Выберите Категорию");
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> arg0) {
+            }
+        });
+    }
     public void SelectDate(final EditText date){
         date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,10 +151,7 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
             }
 
         });
-
     }
-
-
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
@@ -145,6 +166,5 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         Toast.makeText(getApplicationContext(),"Party is Saved",Toast.LENGTH_SHORT).show();
-
     }
 }

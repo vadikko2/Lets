@@ -18,4 +18,8 @@
     <string name="str_select_place">Select Place</string>>
     <string name="str_set_information">Set Information</string>
     <string name="str_save_party">Save</string>
+    <string name = "str_name_party">Name Party</string>
+    <string name = "str_select_category">Select Category</string>
+    <string name = "str_select_date_time">Select Date and Time</string>
+    <string name = "str_select_name_party">Select name Party</string>
 </resources>
