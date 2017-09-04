@@ -3,8 +3,10 @@
     package="com.example.root.myapplication">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MainApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -43,6 +45,11 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".bottomsheetActivity" />
+        <activity
+            android:name="com.vk.sdk.VKServiceActivity"
+            android:label="ServiceActivity"
+            android:theme="@style/VK.Transparent" />
+        <activity android:name=".VKActivity"></activity>
     </application>
 
 </manifest>

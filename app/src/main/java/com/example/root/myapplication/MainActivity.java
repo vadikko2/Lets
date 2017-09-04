@@ -1,9 +1,11 @@
 package com.example.root.myapplication;
 
+import android.app.Application;
 import android.content.Intent;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,6 +21,8 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.vk.sdk.VKSdk;
+import com.vk.sdk.util.VKUtil;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -33,6 +37,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent vk = new Intent(this, VKActivity.class);
+        vk.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(vk);
+
+
         setContentView(R.layout.activity_main);
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -64,6 +73,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 startActivity(in);
             }
         });
+
     }
     //для кнопки с картой, пока чо не надо
     public void sendMap(View view){
