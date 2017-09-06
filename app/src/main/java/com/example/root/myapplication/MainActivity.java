@@ -1,6 +1,8 @@
 package com.example.root.myapplication;
 
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationManager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
@@ -113,9 +116,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             mMap.setMinZoomPreference(9.0f);
             mMap.setMaxZoomPreference(100.0f);
             // Add a marker in Sydney and move the camera
-            LatLng sydney = new LatLng(59.8796478,29.8620346);
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Старый петергоф станция"));
-            mMap.animateCamera(CameraUpdateFactory.newLatLng(sydney));
+            LatLng petergof = new LatLng(59.8796478,29.8620346);
+            mMap.addMarker(new MarkerOptions().position(petergof).title(petergof.toString()));
+            mMap.animateCamera(CameraUpdateFactory.newLatLng(petergof));
+
         }
 }
 

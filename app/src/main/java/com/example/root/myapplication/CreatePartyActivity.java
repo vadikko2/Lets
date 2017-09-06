@@ -1,12 +1,15 @@
 package com.example.root.myapplication;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -31,6 +34,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 /**
@@ -46,6 +50,7 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
     GoogleMap mMap;
     LatLng pointll = null;
     String[] categorys = {"--", "Спорт", "Развлечения", "Питие", "Культура", "Игры"};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -67,7 +72,8 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         SelectPlace();
         SelectСategory();
     }
-    public void SelectСategory(){
+
+    public void SelectСategory() {
         spinner.setAdapter(adapter);
         spinner.setPrompt("Выберите Категорию");
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -76,12 +82,14 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
                                        int position, long id) {
                 Toast.makeText(getBaseContext(), "Position = " + position, Toast.LENGTH_SHORT).show();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> arg0) {
             }
         });
     }
-    public void SelectDate(final EditText date){
+
+    public void SelectDate(final EditText date) {
         date.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,7 +116,7 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         });
     }
 
-    public void SelectTime(final EditText time){
+    public void SelectTime(final EditText time) {
         time.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,8 +136,9 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         });
     }
 
-    public void SelectPlace(){
-        PlaceAutocompleteFragment places= (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
+    public void SelectPlace() {
+
+        PlaceAutocompleteFragment places = (PlaceAutocompleteFragment) getFragmentManager().findFragmentById(R.id.place_autocomplete_fragment);
         AutocompleteFilter typeFilter = new AutocompleteFilter.Builder()
                 .setTypeFilter(AutocompleteFilter.TYPE_FILTER_ADDRESS)
                 .build();
@@ -147,7 +156,7 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
 
             @Override
             public void onError(Status status) {
-                Toast.makeText(getApplicationContext(),status.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), status.toString(), Toast.LENGTH_SHORT).show();
             }
 
         });
@@ -158,8 +167,25 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         mMap = googleMap;
         mMap.setMinZoomPreference(9.0f);
         mMap.setMaxZoomPreference(100.0f);
-        mMap.addMarker(new MarkerOptions().position(pointll).title(pointll.toString()));
+        mMap.addMarker(new MarkerOptions().position(pointll).title(pointll.toString()).draggable(true));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(pointll));
+        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+            @Override
+            public void onMarkerDragStart(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDrag(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDragEnd(Marker marker) {
+                LatLng tmp = marker.getPosition();
+                marker.setTitle(tmp.toString());
+            }
+        });
     }
 
     public void saveParty(View view){
