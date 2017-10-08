@@ -13,6 +13,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -36,6 +37,8 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.Map;
 
 /**
  * Created by root on 07.08.17.
@@ -169,6 +172,13 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
         mMap.setMaxZoomPreference(100.0f);
         mMap.addMarker(new MarkerOptions().position(pointll).title(pointll.toString()).draggable(true));
         mMap.animateCamera(CameraUpdateFactory.newLatLng(pointll));
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                Intent intent = new Intent(CreatePartyActivity.this, MapsActivity.class);
+                startActivity(intent);
+            }
+        });
         mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
             @Override
             public void onMarkerDragStart(Marker marker) {
@@ -186,6 +196,7 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
                 marker.setTitle(tmp.toString());
             }
         });
+
     }
 
     public void saveParty(View view){

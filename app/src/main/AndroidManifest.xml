@@ -43,6 +43,7 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".bottomsheetActivity" />
+        <activity android:name=".eventAcivity"></activity>
     </application>
 
 </manifest>

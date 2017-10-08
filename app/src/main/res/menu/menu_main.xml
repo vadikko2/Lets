@@ -8,9 +8,4 @@
         android:orderInCategory="100"
         android:title="@string/settings"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/action_create_party"
-        android:orderInCategory="100"
-        android:title="@string/create_party"
-        app:showAsAction="never" />
 </menu>

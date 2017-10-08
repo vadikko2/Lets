@@ -1,8 +1,8 @@
 package com.example.root.myapplication;
 
 import android.content.Intent;
-import android.location.Location;
-import android.location.LocationManager;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,7 +20,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
@@ -67,6 +66,24 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 startActivity(in);
             }
         });
+        BottomNavigationView bottomNavigationView = (BottomNavigationView)
+                findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.action_Map:
+
+                            case R.id.action_new_event:
+
+                            case R.id.action_future_events:
+
+                        }
+                        return true;
+                    }
+                });
     }
     //для кнопки с картой, пока чо не надо
     public void sendMap(View view){
@@ -101,10 +118,6 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             case R.id.action_settings_main:
                 Toast.makeText(getApplicationContext(),
                         "You selected Settings", Toast.LENGTH_LONG).show();
-                return true;
-            case R.id.action_create_party:
-                Intent in=new Intent(this, CreatePartyActivity.class);
-                startActivity(in);
                 return true;
         }
         return super.onOptionsItemSelected(item);

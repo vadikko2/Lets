@@ -5,4 +5,5 @@
     <color name="black_overlay">#66000000</color>
     <color name="orange_gradient_start">#fc4a1a</color>
     <color name="orange_gradient_end">#f7b733</color>
+    <color name="white">#fff</color>
 </resources>

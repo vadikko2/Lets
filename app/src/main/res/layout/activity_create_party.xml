@@ -1,198 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-<LinearLayout
-    android:layout_height="match_parent"
     android:layout_width="wrap_content"
-    android:orientation="vertical"
-    android:weightSum="1">
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-
-    <TextView
-        android:id="@+id/TextViewSelectName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_select_name_party"
-        android:paddingLeft="15sp"
-        android:paddingTop="15dp"
-        android:textSize="22sp"
-        android:background="@color/orange_gradient_end"/>
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="0"
-        android:layout_weight="0.06">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="1">
 
-        <EditText
-            android:id="@+id/editText"
-            android:layout_width="182dp"
+
+        <TextView
+            android:id="@+id/TextViewSelectName"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:hint="@string/str_name_party"
-            android:backgroundTint="@color/orange_gradient_start"
-            android:padding="15dp"
+            android:paddingLeft="15sp"
+            android:paddingTop="15dp"
+            android:text="@string/str_select_name_party"
             android:textSize="22sp" />
 
-        <Switch
-            android:id="@+id/switchPrivate"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.06"
+            android:orientation="horizontal"
+            android:weightSum="0">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="182dp"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/orange_gradient_start"
+                android:hint="@string/str_name_party"
+                android:padding="15dp"
+                android:textSize="22sp" />
+
+            <Switch
+                android:id="@+id/switchPrivate"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Public/Private"
+                android:theme="@style/ColorSwitchStyle" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextViewSpiner"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:theme = "@style/ColorSwitchStyle"
-            android:text="Public/Private" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/TextViewSpiner"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_select_category"
-        android:paddingLeft="15sp"
-        android:paddingTop="15dp"
-        android:textSize="22sp"
-        android:background="@color/orange_gradient_end"/>
-
-    <Spinner
-        android:id="@+id/spiner_create"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_weight="1.18"
-        android:spinnerMode="dialog"></Spinner>
-
-    <TextView
-        android:id="@+id/TextViewDateTime"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_select_date_time"
-        android:paddingLeft="15sp"
-        android:paddingTop="15dp"
-        android:textSize="22sp"
-        android:background="@color/orange_gradient_end"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="0"
-        android:layout_weight="0">
-
-        <EditText
-            android:id="@+id/dateStart"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:hint="Date Start"
-            android:backgroundTint="@color/orange_gradient_start"
-            android:padding="15dp"
-            android:textSize="20sp" />
+            android:paddingLeft="15sp"
+            android:paddingTop="15dp"
+            android:text="@string/str_select_category"
+            android:textSize="22sp" />
 
-        <EditText
-            android:id="@+id/dateEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:hint="Date End"
-            android:backgroundTint="@color/orange_gradient_end"
-            android:padding="15dp"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:weightSum="0"
-        android:layout_weight="0">
-
-        <EditText
-            android:id="@+id/timeStart"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:hint="Time Start"
-            android:backgroundTint="@color/orange_gradient_start"
-            android:padding="15dp"
-            android:textSize="20sp" />
-
-        <EditText
-            android:id="@+id/timeEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:hint="Time End"
-            android:backgroundTint="@color/orange_gradient_end"
-            android:padding="15dp"
-            android:textSize="20sp" />
-    </LinearLayout>
-
-
-    <TextView
-        android:id="@+id/TextViewSelectPlace"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_select_place"
-        android:paddingLeft="15sp"
-        android:paddingTop="15dp"
-        android:textSize="22sp"
-        android:background="@color/orange_gradient_end"/>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_weight="0.01"
-        android:orientation="horizontal"
-        android:weightSum="0">
-        <fragment
-            android:id="@+id/place_autocomplete_fragment"
-            android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        <Spinner
+            android:id="@+id/spiner_create"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+            android:layout_height="50dp"
+            android:layout_weight="1.18"
+            android:spinnerMode="dialog"></Spinner>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="310dp"
-        android:orientation="horizontal"
-        android:weightSum="0">
-
-        <fragment
-            android:id="@+id/map"
-            android:name="com.google.android.gms.maps.SupportMapFragment"
+        <TextView
+            android:id="@+id/TextViewDateTime"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15sp"
+            android:paddingTop="15dp"
+            android:text="@string/str_select_date_time"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            android:weightSum="0">
+
+            <EditText
+                android:id="@+id/dateStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/orange_gradient_start"
+                android:hint="Date Start"
+                android:padding="15dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/timeStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:backgroundTint="@color/orange_gradient_start"
+                android:hint="Time Start"
+                android:padding="15dp"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="0"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <EditText
+                android:id="@+id/dateEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="1"
+                android:backgroundTint="@color/orange_gradient_end"
+                android:hint="Date End"
+                android:padding="15dp"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/timeEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.67"
+                android:backgroundTint="@color/orange_gradient_end"
+                android:hint="Time End"
+                android:padding="15dp"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/TextViewSelectPlace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15sp"
+            android:paddingTop="15dp"
+            android:text="@string/str_select_place"
+            android:textSize="22sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_weight="0.01"
+            android:orientation="horizontal"
+            android:weightSum="0">
+
+            <fragment
+                android:id="@+id/place_autocomplete_fragment"
+                android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="310dp"
-            tools:context=".MapsActivity" />
-    </LinearLayout>
+            android:orientation="horizontal"
+            android:weightSum="0">
 
-    <TextView
-        android:id="@+id/TextViewInfoParty"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/str_set_information"
-        android:paddingTop="15dp"
-        android:paddingLeft="15sp"
-        android:textSize="22sp"
-        android:background="@color/orange_gradient_end"/>
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="310dp"
+                tools:context=".MapsActivity" />
+        </LinearLayout>
 
-    <EditText
-        android:id="@+id/text_information"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/orange_gradient_end"
-        android:hint="Set your information"
-        android:padding="15dp"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/TextViewInfoParty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15sp"
+            android:paddingTop="15dp"
+            android:text="@string/str_set_information"
+            android:textSize="22sp" />
 
-    <Button
-        android:id="@+id/buttom_save_party"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/orange_gradient"
-        android:onClick="saveParty"
-        android:text="@string/str_save_party"
-        android:textColor="@android:color/white" />
+        <EditText
+            android:id="@+id/text_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:hint="Set your information"
+            android:padding="15dp"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/buttom_save_party"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/orange_gradient"
+            android:onClick="saveParty"
+            android:text="@string/str_save_party"
+            android:textColor="@android:color/white" />
         />
-</LinearLayout>
+    </LinearLayout>
 </ScrollView>

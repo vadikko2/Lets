@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_Map"
+        android:enabled="true"
+        android:icon = "@drawable/ic_action_map"
+        android:title="Map"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_future_events"
+        android:enabled="true"
+        android:icon = "@drawable/ic_action_future_events"
+        android:title="Future Events"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_new_event"
+        android:enabled="true"
+        android:icon = "@drawable/ic_action_add_event"
+        android:title="New Event"
+        app:showAsAction="ifRoom" />
+</menu>
