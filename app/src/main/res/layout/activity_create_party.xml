@@ -33,7 +33,6 @@
                 android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:backgroundTint="@color/orange_gradient_start"
                 android:hint="@string/str_name_party"
                 android:padding="15dp"
                 android:textSize="22sp" />
@@ -83,7 +82,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:backgroundTint="@color/orange_gradient_start"
                 android:hint="Date Start"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -94,7 +92,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                android:backgroundTint="@color/orange_gradient_start"
                 android:hint="Time Start"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -114,7 +111,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="1"
-                android:backgroundTint="@color/orange_gradient_end"
                 android:hint="Date End"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -125,7 +121,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_weight="0.67"
-                android:backgroundTint="@color/orange_gradient_end"
                 android:hint="Time End"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -139,7 +134,8 @@
             android:paddingLeft="15sp"
             android:paddingTop="15dp"
             android:text="@string/str_select_place"
-            android:textSize="22sp" />
+            android:textSize="22sp"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -191,7 +187,6 @@
             android:id="@+id/buttom_save_party"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/orange_gradient"
             android:onClick="saveParty"
             android:text="@string/str_save_party"
             android:textColor="@android:color/white" />

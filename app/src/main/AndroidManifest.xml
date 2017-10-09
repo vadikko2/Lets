@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_api_key" />
@@ -43,7 +44,15 @@
                 android:value=".MainActivity" />
         </activity>
         <activity android:name=".bottomsheetActivity" />
-        <activity android:name=".eventAcivity"></activity>
+        <activity android:name=".eventAcivity" />
+        <activity
+            android:name=".Map"
+            android:label="@string/title_activity_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".fragment_new_event"
+            android:label="@string/title_activity_fragment_new_event"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

@@ -3,32 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/action_Map"
-        android:enabled="true"
         android:icon = "@drawable/ic_action_map"
         android:title="Карта"
-        app:showAsAction="ifRoom" />
+        android:enabled="true"
+        />
     <item
         android:id="@+id/action_list_events"
-        android:enabled="true"
         android:icon = "@drawable/ic_action_list_events"
         android:title="Все события"
-        app:showAsAction="ifRoom" />
+        android:enabled="true"
+        />
     <item
         android:id="@+id/action_future_events"
-        android:enabled="true"
-        android:icon = "@drawable/ic_action_future_events"
+        android:icon="@drawable/ic_action_future_events"
         android:title="Запись"
-        app:showAsAction="ifRoom" />
+        android:enabled="true"
+        />
     <item
         android:id="@+id/action_new_event"
+        android:icon="@drawable/ic_action_add_event"
+        android:title="Создать"
         android:enabled="true"
-        android:icon = "@drawable/ic_action_add_event"
-        android:title="Новое событие"
-        app:showAsAction="ifRoom" />
+        />
     <item
         android:id="@+id/action_profile"
-        android:enabled="true"
-        android:icon = "@drawable/ic_action_profile"
+        android:icon="@drawable/ic_action_profile"
         android:title="Профиль"
-        app:showAsAction="ifRoom" />
+        android:enabled="true"
+        />
 </menu>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="17dp" />
+
+    <TextView
+        android:id="@+id/EventName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageView"
+        android:padding="2dp"
+        android:text="Event Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/TimeStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18:00"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_alignBottom="@+id/EventName"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/DateStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/TimeStart"
+        android:layout_alignRight="@+id/TimeStart"
+        android:layout_below="@+id/TimeStart"
+        android:text="10/10/17"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="11sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/Creator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/EventName"
+        android:layout_toRightOf="@+id/imageView"
+        android:layout_alignRight="@+id/EventName"
+        android:layout_alignEnd="@+id/EventName" />
+
+    <TextView
+        android:id="@+id/Location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="13sp"
+        android:layout_below="@+id/Creator"
+        android:layout_alignRight="@+id/EventName"
+        android:layout_alignEnd="@+id/EventName"
+        android:layout_toRightOf="@+id/Point"
+        android:layout_toEndOf="@+id/Point" />
+
+    <ImageView
+        android:id="@+id/Point"
+        android:layout_width="15dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Location"
+        android:layout_below="@+id/Creator"
+        android:layout_toRightOf="@+id/imageView"
+        android:padding="0dp"
+        app:srcCompat="@drawable/ic_action_location_event_on_list" />
+
+
+</RelativeLayout>

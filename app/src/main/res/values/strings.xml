@@ -22,4 +22,9 @@
     <string name="str_select_category">Select Category</string>
     <string name="str_select_date_time">Select Date and Time</string>
     <string name="str_select_name_party">Select name Party</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_map">Map</string>
+    <string name="title_activity_fragment_new_event">fragment_new_event</string>
 </resources>
