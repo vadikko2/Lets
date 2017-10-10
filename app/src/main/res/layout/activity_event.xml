@@ -40,7 +40,8 @@
                         android:paddingBottom="0dp"
                         android:paddingTop="10dp"
                         android:text="Event Name"
-                        android:textSize="24sp"
+                        android:textAlignment="textStart"
+                        android:textSize="30sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toRightOf="@+id/EventIcon"
                         tools:layout_editor_absoluteY="16dp" />
@@ -53,7 +54,7 @@
                         android:layout_marginStart="33dp"
                         android:layout_weight="4.45"
                         android:text="Creator Name"
-                        android:textSize="18sp"
+                        android:textSize="15sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toRightOf="@+id/EventIcon"
                         app:layout_constraintTop_toBottomOf="@+id/EventName" />
@@ -72,21 +73,22 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     tools:layout_editor_absoluteY="16dp"
-                    >
+                    android:weightSum="1">
 
                     <TextView
                         android:id="@+id/Start"
-                        android:layout_width="wrap_content"
+                        android:layout_width="79dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Начало:"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_weight="0.01" />
                     <TextView
                         android:id="@+id/DateTimeStart"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="27dp"
                         android:text="18.00, 10/10/17" />
 
 
@@ -95,22 +97,24 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:weightSum="1">
 
                     <TextView
                         android:id="@+id/End"
-                        android:layout_width="wrap_content"
+                        android:layout_width="79dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
+                        android:layout_marginLeft="10dp"
                         android:text="Конец:"
                         android:textSize="18sp"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:layout_weight="0.01"/>
 
                     <TextView
                         android:id="@+id/DateTimeEnd"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="27dp"
                         android:text="19.00, 10/10/17" />
                 </LinearLayout>
             </LinearLayout>
@@ -119,7 +123,7 @@
                 android:id="@+id/EventInformation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="15dp"
                 android:text="Описание отсутствует"
@@ -134,10 +138,7 @@
                     android:id="@+id/Point"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/Location"
-                    android:layout_below="@+id/Creator"
-                    android:layout_toRightOf="@+id/imageView"
-                    android:padding="0dp"
+                    android:layout_marginLeft="5dp"
                     app:srcCompat="@drawable/ic_action_location_event_on_list" />
 
                 <TextView
@@ -161,10 +162,11 @@
                 tools:context=".EventActivity" />
 
             <Button
-                android:id="@+id/Reserv"
+                android:id="@+id/Reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Reserv to Event"
+                android:text="Registrate to Event"
+                android:onClick="saveParty"
                 android:textColor="@android:color/white" />
         </LinearLayout>
     </ScrollView>
