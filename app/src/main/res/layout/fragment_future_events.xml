@@ -92,7 +92,7 @@
         android:id="@+id/FlagReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_action_registrate_default"
+        app:srcCompat="@drawable/ic_action_registrate"
         android:layout_alignTop="@+id/TimeStart"
         android:layout_toLeftOf="@+id/TimeStart"
         android:layout_toStartOf="@+id/TimeStart"

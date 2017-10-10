@@ -40,7 +40,6 @@
                         android:paddingBottom="0dp"
                         android:paddingTop="10dp"
                         android:text="Event Name"
-                        android:textAlignment="textStart"
                         android:textSize="30sp"
                         android:textStyle="bold"
                         app:layout_constraintLeft_toRightOf="@+id/EventIcon"

@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
                                 selectedFragment = new ItemEventsFragment();
                                 break;
                             case R.id.action_future_events:
-                                selectedFragment = new ItemMapFragment();
+                                selectedFragment = new ItemFutureEventsFragment();
                                 break;
                             case R.id.action_new_event:
                                 Intent intent = new Intent(MainActivity.this, CreatePartyActivity.class);
