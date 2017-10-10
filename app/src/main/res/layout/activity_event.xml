@@ -165,7 +165,7 @@
                 android:id="@+id/Reg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Registrate to Event"
+                android:text="Let's GO!"
                 android:onClick="saveParty"
                 android:textColor="@android:color/white" />
         </LinearLayout>
