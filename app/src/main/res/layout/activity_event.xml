@@ -1,17 +1,170 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.root.myapplication.eventAcivity">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:layout_editor_absoluteX="8dp"
+    tools:layout_editor_absoluteY="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPostalAddress"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="49dp" />
-</android.support.constraint.ConstraintLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/EventIcon"
+                    android:layout_width="84dp"
+                    android:layout_height="78dp"
+                    app:srcCompat="@drawable/ic_action_event_empty"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="16dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/EventName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginStart="33dp"
+                        android:layout_weight="1"
+                        android:paddingBottom="0dp"
+                        android:paddingTop="10dp"
+                        android:text="Event Name"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@+id/EventIcon"
+                        tools:layout_editor_absoluteY="16dp" />
+
+                    <TextView
+                        android:id="@+id/Creator"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginLeft="33dp"
+                        android:layout_marginStart="33dp"
+                        android:layout_weight="4.45"
+                        android:text="Creator Name"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintLeft_toRightOf="@+id/EventIcon"
+                        app:layout_constraintTop_toBottomOf="@+id/EventName" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:layout_editor_absoluteY="16dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/Start"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Начало:"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/DateTimeStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="18.00, 10/10/17" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/End"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:text="Конец:"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/DateTimeEnd"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="25dp"
+                        android:text="19.00, 10/10/17" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/EventInformation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:text="Описание отсутствует"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/Point"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/Location"
+                    android:layout_below="@+id/Creator"
+                    android:layout_toRightOf="@+id/imageView"
+                    android:padding="0dp"
+                    app:srcCompat="@drawable/ic_action_location_event_on_list" />
+
+                <TextView
+                    android:id="@+id/Location"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_toEndOf="@+id/Point"
+                    android:layout_toRightOf="@+id/Point"
+                    android:text="Location"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <fragment
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="340dp"
+                android:layout_weight="0.67"
+                tools:context=".EventActivity" />
+
+            <Button
+                android:id="@+id/Reserv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reserv to Event"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+    </ScrollView>

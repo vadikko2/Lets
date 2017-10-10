@@ -1,5 +1,6 @@
 package com.example.root.myapplication;
 
+import android.content.Intent;
 import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.os.Bundle;
@@ -51,6 +52,7 @@ public class ItemEventsFragment extends ListFragment {// определяем м
         //ADAPTER
         adapter=new SimpleAdapter(getActivity(), data, R.layout.fragment_events, from, to);
         setListAdapter(adapter);
+
         return super.onCreateView(inflater, container, savedInstanceState);
     }
     @Override
@@ -62,6 +64,8 @@ public class ItemEventsFragment extends ListFragment {// определяем м
             public void onItemClick(AdapterView<?> av, View v, int pos,
                                     long id) {
                 // TODO Auto-generated method stub
+                Intent intent = new Intent(getActivity(), EventActivity.class);
+                startActivity(intent);
                 Toast.makeText(getActivity(), data.get(pos).get("Player"), Toast.LENGTH_SHORT).show();
             }
         });
