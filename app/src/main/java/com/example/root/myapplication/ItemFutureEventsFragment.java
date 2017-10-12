@@ -59,7 +59,7 @@ public class ItemFutureEventsFragment extends ListFragment {// определя�
                 // TODO Auto-generated method stub
                 Intent intent = new Intent(getActivity(), EventActivity.class);
                 startActivity(intent);
-                Toast.makeText(getActivity(), data.get(pos).get("Player"), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getActivity(), data.get(pos).get("Player"), Toast.LENGTH_SHORT).show();
             }
         });
     }
