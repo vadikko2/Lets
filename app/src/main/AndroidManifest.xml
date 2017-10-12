@@ -42,8 +42,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity" />
         </activity>
+        <activity
+            android:name=".EventActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".bottomsheetActivity" />
-        <activity android:name=".eventAcivity" />
         <activity
             android:name=".Map"
             android:label="@string/title_activity_map"
@@ -52,7 +58,6 @@
             android:name=".fragment_new_event"
             android:label="@string/title_activity_fragment_new_event"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".EventActivity"></activity>
     </application>
 
 </manifest>

@@ -17,9 +17,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -53,7 +55,6 @@ public class CreatePartyActivity extends AppCompatActivity implements OnMapReady
     GoogleMap mMap;
     LatLng pointll = null;
     String[] categorys = {"--", "Спорт", "Развлечения", "Питие", "Культура", "Игры"};
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
