@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:weightSum="1">
@@ -16,8 +16,6 @@
             android:id="@+id/TextViewSelectName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="15sp"
-            android:paddingTop="15dp"
             android:text="@string/str_select_name_party"
             android:textSize="22sp" />
 
@@ -29,8 +27,8 @@
             android:weightSum="0">
 
             <EditText
-                android:id="@+id/editText"
-                android:layout_width="182dp"
+                android:id="@+id/NameParty"
+                android:layout_width="225dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:hint="@string/str_name_party"
@@ -42,6 +40,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="Public/Private"
+                android:textAllCaps="false"
+                android:textSize="22sp"
                 android:theme="@style/ColorSwitchStyle" />
         </LinearLayout>
 
@@ -75,7 +75,7 @@
             android:layout_height="50dp"
             android:layout_weight="0"
             android:orientation="horizontal"
-            android:weightSum="0">
+            android:weightSum="1">
 
             <EditText
                 android:id="@+id/dateStart"
@@ -84,14 +84,15 @@
                 android:layout_centerHorizontal="true"
                 android:hint="Date Start"
                 android:padding="15dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_weight="0.44" />
 
             <EditText
                 android:id="@+id/timeStart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_weight="1"
+                android:layout_weight="0.56"
                 android:hint="Time Start"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -110,17 +111,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_weight="1"
                 android:hint="Date End"
                 android:padding="15dp"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_weight="1" />
 
             <EditText
                 android:id="@+id/timeEnd"
-                android:layout_width="wrap_content"
+                android:layout_width="203dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_weight="0.67"
                 android:hint="Time End"
                 android:padding="15dp"
                 android:textSize="20sp" />
@@ -134,37 +134,18 @@
             android:paddingLeft="15sp"
             android:paddingTop="15dp"
             android:text="@string/str_select_place"
-            android:textSize="22sp"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_weight="0.01"
-            android:orientation="horizontal"
-            android:weightSum="0">
-
+            android:textSize="22sp" />
             <fragment
                 android:id="@+id/place_autocomplete_fragment"
                 android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="310dp"
-            android:orientation="horizontal"
-            android:weightSum="0">
-
             <fragment
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="310dp"
                 tools:context=".MapsActivity" />
-        </LinearLayout>
-
         <TextView
             android:id="@+id/TextViewInfoParty"
             android:layout_width="match_parent"

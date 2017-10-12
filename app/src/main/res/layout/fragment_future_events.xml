@@ -92,13 +92,22 @@
         android:id="@+id/FlagReg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ic_action_registrate"
+        app:srcCompat="@drawable/ic_action_invite"
         android:layout_alignTop="@+id/TimeStart"
         android:layout_toLeftOf="@+id/TimeStart"
         android:layout_toStartOf="@+id/TimeStart"
         android:layout_marginRight="11dp"
         android:layout_marginEnd="11dp"
         android:layout_alignBottom="@+id/DateStart" />
-
+    <TextView
+        android:id="@+id/Inviting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inviting"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        android:layout_below="@+id/FlagReg"
+        android:layout_alignLeft="@+id/FlagReg"
+        android:layout_alignStart="@+id/FlagReg" />
 
 </RelativeLayout>
